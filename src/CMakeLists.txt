@@ -6,6 +6,9 @@ link_directories(${LIBSKK_LIBRARY_DIRS})
 
 set(fcitx_skk_sources
   skk.c skk-config.c)
+# Pseudo target to declare source files in cmake. Won't actually use for build.
+add_custom_target(pseudo_fcitx_skk
+        SOURCES ${fcitx_skk_soruces})
 fcitx_add_addon_full(skk
   DESC
   SOURCES ${fcitx_skk_sources}
